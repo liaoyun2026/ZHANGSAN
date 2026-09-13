@@ -1,0 +1,1899 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="李奥运 · 河南牧业经济学院智能制造专业 · 个人简历">
+<meta name="theme-color" content="#4f46e5">
+<title>李奥运 · 个人简历</title>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('resume-theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<style>
+/* ============ Design Tokens ============ */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f8;
+  --text: #131a2b;
+  --text-2: #5b657a;
+  --text-3: #8b95a9;
+  --border: rgba(19, 26, 43, .10);
+  --border-strong: rgba(19, 26, 43, .18);
+  --primary: #4f46e5;
+  --primary-ink: #4f46e5;
+  --primary-soft: rgba(79, 70, 229, .10);
+  --accent: #06b6d4;
+  --accent-ink: #0e7490;
+  --accent-soft: rgba(6, 182, 212, .12);
+  --grad: linear-gradient(120deg, #4f46e5 0%, #7c3aed 48%, #06b6d4 100%);
+  --glow-1: rgba(79, 70, 229, .16);
+  --glow-2: rgba(6, 182, 212, .14);
+  --shadow-sm: 0 1px 2px rgba(19, 26, 43, .05), 0 2px 8px rgba(19, 26, 43, .05);
+  --shadow-md: 0 8px 24px rgba(19, 26, 43, .09), 0 2px 6px rgba(19, 26, 43, .05);
+  --shadow-lg: 0 20px 44px rgba(19, 26, 43, .14);
+  --nav-bg: rgba(244, 246, 251, .82);
+  --radius: 16px;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0f1a;
+  --surface: #131a2b;
+  --surface-2: #0e1422;
+  --text: #e9eef8;
+  --text-2: #a3aec5;
+  --text-3: #717d95;
+  --border: rgba(255, 255, 255, .10);
+  --border-strong: rgba(255, 255, 255, .20);
+  --primary: #818cf8;
+  --primary-ink: #a5b4fc;
+  --primary-soft: rgba(129, 140, 248, .14);
+  --accent: #22d3ee;
+  --accent-ink: #67e8f9;
+  --accent-soft: rgba(34, 211, 238, .14);
+  --grad: linear-gradient(120deg, #818cf8 0%, #a78bfa 48%, #22d3ee 100%);
+  --glow-1: rgba(99, 102, 241, .20);
+  --glow-2: rgba(34, 211, 238, .14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, .45);
+  --shadow-lg: 0 22px 50px rgba(0, 0, 0, .55);
+  --nav-bg: rgba(11, 15, 26, .82);
+}
+
+/* ============ Base ============ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 78px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", system-ui, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color .3s ease, color .3s ease;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(760px 480px at 6% -10%, var(--glow-1), transparent 68%),
+    radial-gradient(640px 440px at 98% 0%, var(--glow-2), transparent 68%);
+}
+
+main, footer { position: relative; z-index: 1; }
+
+::selection { background: var(--primary-soft); color: var(--primary-ink); }
+
+a { color: var(--primary-ink); }
+
+.container {
+  width: min(1080px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .container { width: calc(100% - 28px); }
+}
+
+/* ============ Nav ============ */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  backdrop-filter: blur(16px) saturate(1.6);
+  border-bottom: 1px solid var(--border);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 60px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -.02em;
+  color: var(--text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: var(--grad);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px -4px rgba(79, 70, 229, .7);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 2px 0;
+}
+
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-link {
+  padding: 7px 12px;
+  border-radius: 9px;
+  font-size: .86rem;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.nav-link:hover { color: var(--text); background: var(--primary-soft); }
+.nav-link.active { color: var(--primary-ink); background: var(--primary-soft); font-weight: 700; }
+
+.nav-actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.icon-btn:hover {
+  color: var(--primary-ink);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-btn svg { display: block; }
+
+#themeToggle span { display: none; }
+#themeToggle .icon-sun { display: grid; }
+[data-theme="dark"] #themeToggle .icon-sun { display: none; }
+[data-theme="dark"] #themeToggle .icon-moon { display: grid; }
+
+@media (max-width: 720px) {
+  .brand span:not(.brand-dot) { display: none; }
+  .nav-link { padding: 6px 9px; font-size: .8rem; }
+  .nav-inner { gap: 8px; }
+}
+
+/* ============ Sections ============ */
+section { padding: 58px 0; }
+
+.section-head { margin-bottom: 26px; }
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 6px;
+  font-size: 1.42rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.section-title::before {
+  content: "";
+  width: 6px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--grad);
+  flex-shrink: 0;
+}
+
+.section-sub {
+  margin: 0;
+  font-size: .88rem;
+  color: var(--text-2);
+  padding-left: 17px;
+}
+
+/* ============ Hero ============ */
+.hero { padding: 128px 0 52px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid transparent;
+}
+
+.name {
+  margin: 0 0 10px;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.hero-summary {
+  margin: 0 0 20px;
+  font-size: .93rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-width: 62ch;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: .79rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary-ink);
+}
+
+.badge-sm { font-size: .72rem; padding: 3px 10px; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: .88rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, color .18s ease,
+    border-color .18s ease, background-color .18s ease;
+  white-space: nowrap;
+}
+
+.btn svg { flex-shrink: 0; }
+
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(79, 70, 229, .8);
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(79, 70, 229, .9); }
+
+.btn-ghost {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary-ink);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-wrap {
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--grad);
+  box-shadow: 0 22px 46px -18px rgba(79, 70, 229, .85);
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-size: 3.1rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  background-clip: padding-box;
+  color: var(--primary-ink);
+}
+
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  color: var(--text-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 5px 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 880px) {
+  .hero { padding: 108px 0 40px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .hero-right { order: -1; flex-direction: row; gap: 18px; align-items: center; }
+  .hero-meta { margin-top: 0; align-items: flex-start; }
+  .avatar-wrap { width: 104px; height: 104px; }
+  .avatar-inner { font-size: 1.9rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-right { flex-direction: column; align-items: flex-start; }
+  .hero-meta { flex-direction: row; flex-wrap: wrap; margin-top: 4px; }
+}
+
+/* ============ Cards / Stats ============ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.stat::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.stat:hover::after { opacity: 1; }
+
+.stat-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label { margin-top: 6px; font-size: .9rem; font-weight: 700; }
+
+.stat-desc { margin-top: 4px; font-size: .77rem; line-height: 1.55; color: var(--text-3); }
+
+/* ============ Tabs ============ */
+.tabs {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  margin-bottom: 22px;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-family: inherit;
+  font-size: .86rem;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+
+.tab:hover { color: var(--text); }
+
+.tab[aria-selected="true"] {
+  background: var(--surface);
+  color: var(--primary-ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.tabpanel { animation: fadeUp .32s cubic-bezier(.22, .85, .28, 1) both; }
+.tabpanel:focus { outline: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ============ Timeline / Experience ============ */
+.timeline { position: relative; padding-left: 24px; }
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  opacity: .28;
+}
+
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-item:last-child { margin-bottom: 0; }
+
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 26px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2.5px solid var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.item-head {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.item-title { margin: 0; font-size: 1.02rem; font-weight: 700; letter-spacing: -.015em; }
+
+.item-org { margin: 3px 0 0; font-size: .84rem; color: var(--text-2); }
+
+.item-period {
+  flex-shrink: 0;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.item-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+.points {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.points li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  font-size: .875rem;
+  line-height: 1.8;
+  color: var(--text-2);
+}
+
+.points li:last-child { margin-bottom: 0; }
+
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: .72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--grad);
+  transform: rotate(45deg);
+}
+
+/* ============ Projects ============ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.proj-top {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.proj-title { margin: 0; font-size: 1.02rem; font-weight: 700; letter-spacing: -.015em; }
+
+.proj-sub { margin: 6px 0 0; font-size: .82rem; color: var(--text-3); }
+
+.proj-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.chip {
+  padding: 3px 10px;
+  border-radius: 7px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+}
+
+/* ============ Skills ============ */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: 16px;
+}
+
+.skill-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.skill-card-title .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--grad);
+  flex-shrink: 0;
+}
+
+.skill-row { margin-bottom: 14px; }
+.skill-row:last-child { margin-bottom: 0; }
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: .84rem;
+}
+
+.skill-name { color: var(--text); font-weight: 500; }
+
+.skill-pct {
+  font-size: .75rem;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--grad);
+  transition: width .9s cubic-bezier(.22, .85, .28, 1);
+}
+
+/* ============ Certificates ============ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  gap: 12px;
+}
+
+.cert {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.cert:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.cert-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-soft);
+  color: var(--primary-ink);
+}
+
+.cert-name { font-size: .86rem; font-weight: 600; line-height: 1.5; }
+
+.cert-meta { margin-top: 3px; font-size: .74rem; color: var(--text-3); }
+
+/* ============ Cert Photos ============ */
+.cert-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.cert-photo {
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.cert-photo:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.cert-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+  background: var(--surface-2);
+}
+
+.cert-photo figcaption {
+  font-size: .78rem;
+  color: var(--text-3);
+  text-align: center;
+}
+
+/* ============ Footer ============ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--text-3);
+}
+
+footer p { margin: 0 0 4px; }
+
+/* ============ To Top ============ */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  box-shadow: var(--shadow-md);
+  transition: opacity .25s ease, transform .25s ease, color .18s ease, border-color .18s ease;
+}
+
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+
+.to-top:hover { color: var(--primary-ink); border-color: var(--primary); }
+
+/* ============ Reveal ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .55s cubic-bezier(.22, .85, .28, 1),
+    transform .55s cubic-bezier(.22, .85, .28, 1);
+}
+
+.reveal.in { opacity: 1; transform: none; }
+
+/* ============ Accessibility ============ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .tabpanel { animation: none !important; }
+}
+
+/* ============ Print ============ */
+@media print {
+  @page { margin: 14mm 13mm; }
+
+  :root, [data-theme="dark"] {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --text: #111111;
+    --text-2: #333333;
+    --text-3: #666666;
+    --border: #dddddd;
+    --border-strong: #cccccc;
+    --primary: #4338ca;
+    --primary-ink: #3730a3;
+    --primary-soft: #f1f0fe;
+    --accent: #0e7490;
+    --accent-ink: #0e7490;
+    --accent-soft: #eef8fb;
+    --grad: linear-gradient(120deg, #4338ca, #0e7490);
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --nav-bg: #ffffff;
+  }
+
+  body { background: #fff !important; font-size: 12.5px; }
+  body::before { display: none !important; }
+
+  .nav, .to-top, .no-print, .tabs { display: none !important; }
+
+  .tabpanel[hidden] { display: block !important; }
+  .tabpanel { animation: none !important; }
+
+  section { padding: 14px 0 !important; }
+  .hero { padding: 0 0 14px !important; }
+
+  .card, .stat, .cert, .cert-photo {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    border-color: #ddd !important;
+    transform: none !important;
+  }
+
+  .tl-item { break-inside: avoid; page-break-inside: avoid; }
+
+  .reveal { opacity: 1 !important; transform: none !important; }
+
+  .name, .stat-num {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #111 !important;
+    color: #111 !important;
+  }
+
+  .bar-fill { background: #4338ca !important; }
+  .chip { background: #eef8fb !important; color: #0e7490 !important; }
+  .badge { background: #fff !important; }
+  .avatar-wrap { box-shadow: none !important; }
+  .avatar-inner { color: #3730a3 !important; }
+  .section-title::before { background: #4338ca !important; }
+  .points li::before { background: #4338ca !important; }
+
+  .cert-photo img { max-height: 60mm; }
+
+  a { color: #111 !important; text-decoration: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand">
+      <span class="brand-dot">李</span><span>李奥运</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="页面导航"></nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色 / 浅色模式" title="切换深色 / 浅色模式">
+        <span class="icon-sun">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+        <span class="icon-moon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </span>
+      </button>
+      <button class="icon-btn" id="printBtn" type="button" aria-label="打印 / 保存为 PDF" title="打印 / 保存为 PDF">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <div class="container" id="heroContent"></div>
+  </section>
+
+  <section id="highlights">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">亮点成果</h2>
+        <p class="section-sub">用可量化的结果说话</p>
+      </div>
+      <div class="stats" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">经历</h2>
+        <p class="section-sub">实习实战与校园经历</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="经历分类" id="expTabs"></div>
+      <div id="expPanels"></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">项目</h2>
+        <p class="section-sub">自研项目与个人实践</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="项目分类" id="projTabs"></div>
+      <div id="projPanels"></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">技能矩阵</h2>
+        <p class="section-sub">人工智能 · 语言 · 工具 · 职业素养</p>
+      </div>
+      <div class="skill-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">教育背景</h2>
+        <p class="section-sub">河南牧业经济学院 · 智能制造专业</p>
+      </div>
+      <div class="timeline" id="eduTimeline"></div>
+
+      <div class="section-head" style="margin-top:44px">
+        <h2 class="section-title">证书与荣誉</h2>
+        <p class="section-sub">职业认证 · 竞赛奖项 · 荣誉称号</p>
+      </div>
+      <div class="cert-grid" id="certGrid"></div>
+      <div class="cert-photos" id="certPhotos"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> 李奥运 · 个人简历</p>
+    <p>最后更新：<span id="updateTime"></span></p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="返回顶部" title="返回顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     数据层
+     ========================================================= */
+  const resume = {
+    name: '李奥运',
+    status: '准大一新生',
+    school: '河南牧业经济学院',
+    major: '智能制造专业（本科）',
+    period: '2026.09 – 2030.06',
+    location: '河南省周口市',
+    phone: '18238492479',
+    emailUser: '',
+    emailDomain: '',
+    github: '',
+    linkedin: '',
+
+    summary:
+      '河南牧业经济学院智能制造专业准大一新生，持有人工智能训练师（初级 / 高级）双认证。' +
+      '具备数据标注、模型测试与数据预处理的完整实战经验——独立完成 5000+ 条图像标注，准确率 98.7%，' +
+      '并推动模型验证集 mAP 提升 5.2 个百分点。高中三年担任英语课代表，英语读写能力突出，' +
+      '可流畅阅读英文技术文档。习惯用流程与工具解决问题，期待在智能制造与人工智能交叉领域持续深耕。',
+
+    keywords: [
+      '人工智能训练师（高级）',
+      '数据标注与质检',
+      '模型效果评估',
+      'Python · Pandas',
+      '英文技术文档阅读',
+      'Excel 数据分析',
+      'C1 驾驶证',
+      '流程优化 SOP'
+    ],
+
+    highlights: [
+      { num: '98.7%', label: '图像标注准确率', desc: '独立完成 5000+ 条目标检测 / 语义分割数据，数据集达 A 级标准' },
+      { num: '+5.2pp', label: '模型 mAP 提升', desc: '回传 200+ 条优化建议，推动算法团队调整阈值参数' },
+      { num: '30%', label: '标注效率提升', desc: '设计并推行标准化标注操作手册（SOP），返工率降低 45%' },
+      { num: '42 天', label: 'C1 全科目一次通过', desc: '较当地平均驾考周期（约 60 天）缩短 30%' },
+      { num: '+8.6 分', label: '班级英语平均分', desc: '牵头组织英语角，参与人数由 15 人增长至 40 人' }
+    ],
+
+    experiences: [
+      {
+        category: 'intern',
+        role: '人工智能训练师',
+        org: '暑期实战项目（模拟商业场景）',
+        period: '2026.06 – 2026.08',
+        tags: ['人工智能', '数据标注'],
+        points: [
+          '独立完成超过 5000 条图像标注数据（目标检测框选、语义分割），标注准确率达 98.7%，通过主动复核修正偏差样本，将数据集整体质量提升至 A 级标准，被项目组采纳为训练基准集。',
+          '针对标注流程中存在的类别混淆问题，设计并推行标准化标注操作手册（SOP），使团队整体标注效率提升 30%，返工率降低 45%。',
+          '参与模型测试环节，通过分析模型预测错误案例，回传 200+ 条优化建议，推动算法团队调整阈值参数，最终使模型在验证集上的 mAP 提升 5.2 个百分点。',
+          '利用业余时间自学数据增强技术（翻转、旋转、色彩抖动），辅助生成 3000+ 条扩展样本，有效缓解小样本类别数据不足问题。'
+        ]
+      },
+      {
+        category: 'intern',
+        role: '驾考高效学习与执行项目',
+        org: '个人执行类实战 · C1 驾驶证',
+        period: '2026.06 – 2026.07',
+        tags: ['目标拆解', '快速学习'],
+        points: [
+          '在 42 天内一次性通过科目一至科目四全部考试，取得 C1 驾驶证，超越当地平均驾考周期（约 60 天）30%。',
+          '自主制定每日“理论 + 实操”分段学习计划，利用碎片时间刷题累计 6000+ 道，理论考试取得科目一 100 分、科目四 98 分。',
+          '总结倒车入库、侧方停车等难点项目的“点位记忆法”，在驾校同学中分享推广，帮助同期 3 名学员平均缩短练习周期 5 天。'
+        ]
+      },
+      {
+        category: 'campus',
+        role: '高中英语课代表',
+        org: '教学辅助与班级管理',
+        period: '2023.09 – 2026.06',
+        tags: ['班级管理', '教学辅助'],
+        points: [
+          '负责全班 50+ 名同学的英语作业收发、早读领读及课后答疑，连续 3 年保持作业提交率 100%，协助老师批改听写 / 测试卷累计超过 200 份 / 月。',
+          '牵头组织“英语角”课外活动，设计主题讨论与单词接龙环节，参与人数从初期 15 人增长至 40 人，班级英语平均分较上学期提升 8.6 分。',
+          '针对同学普遍存在的阅读理解失分问题，整理并印发高频词汇速记表及长难句拆解指南，使用后班级阅读板块正确率平均提升 12%。',
+          '作为师生沟通桥梁，定期收集学习反馈并汇总成报告，协助老师调整教学节奏，获得英语教研组公开表扬。'
+        ]
+      }
+    ],
+
+    projects: [
+      {
+        category: 'tech',
+        name: '智能产线缺陷检测 · 模拟项目',
+        subtitle: '自研项目 · 工业缺陷数据标注与轻量模型验证',
+        period: '2026.07 – 2026.08',
+        stack: ['Python', 'Pandas', 'MobileNet', 'COCO / YOLO', '数据增强'],
+        points: [
+          '基于公开的工业缺陷数据集（NEC-Dataset），使用人工智能训练师技能完成缺陷标签标注，共标注 1200 张图像中的划痕、凹坑、毛刺三类缺陷，构建高质量训练子集。',
+          '运用 Python 编写脚本完成标注格式转换（COCO → YOLO）与统计分析，输出缺陷分布可视化图表，发现样本类别不平衡（凹坑类仅占 8%），并针对性进行过采样增强处理。',
+          '模拟部署轻量级分类模型（MobileNet），在测试集上达到 92.3% 的识别准确率；撰写 15 页项目报告，完整记录数据清洗、标注规范、模型选型与调优过程。'
+        ]
+      },
+      {
+        category: 'growth',
+        name: '高考冲刺 · 时间管理优化实践',
+        subtitle: '个人效能优化 · 三轮进阶复习法与错题档案',
+        period: '2025.09 – 2026.06',
+        stack: ['错题电子档案', '三轮复习法', '数据统计'],
+        points: [
+          '针对数学短板制定三轮进阶复习计划（基础梳理 → 专题突破 → 套卷限时），数学模拟考成绩从 95 分提升至高考 116 分，涨幅 22%。',
+          '建立个人错题电子档案，分类统计错误类型（函数、几何、概率等），精准定位薄弱环节，每周专项训练 3 小时，同类题型重复错误率降低 60%。',
+          '将英语优势反哺其他科目，自主翻译并整理 20+ 篇英文版数理化生概念解析，辅助理解抽象公式，形成“以长带短”的高效学习闭环。'
+        ]
+      }
+    ],
+
+    skills: [
+      {
+        group: '人工智能与数据',
+        items: [
+          { name: '数据标注与质量复核', level: 92 },
+          { name: '模型测试与效果评估', level: 80 },
+          { name: '机器学习基础原理', level: 70 },
+          { name: 'Python / Pandas 基础', level: 68 }
+        ]
+      },
+      {
+        group: '语言能力',
+        items: [
+          { name: '英语读写与技术文档', level: 88 },
+          { name: '中文表达与写作', level: 90 },
+          { name: '英文技术社区检索', level: 78 }
+        ]
+      },
+      {
+        group: '工具与协作',
+        items: [
+          { name: 'Office 三件套（Excel 数据分析）', level: 90 },
+          { name: 'XMind / ProcessOn', level: 85 },
+          { name: 'GitHub / Stack Overflow', level: 72 }
+        ]
+      },
+      {
+        group: '职业素养',
+        items: [
+          { name: '时间管理与执行力', level: 92 },
+          { name: '团队协作与沟通', level: 88 },
+          { name: '流程优化与 SOP 设计', level: 85 }
+        ]
+      }
+    ],
+
+    education: {
+      school: '河南牧业经济学院',
+      major: '智能制造专业（本科）',
+      period: '2026.09 – 2030.06',
+      points: [
+        '高考总分 506 分，英语单科成绩突出，具备扎实的英语读写与沟通能力，可流畅阅读英文技术文档并进行专业交流。',
+        '主修课程方向：智能控制技术、工业机器人、传感器与检测技术、CAD/CAM、生产运作管理。',
+        '入学前已完成人工智能领域职业认证（初级 + 高级），计划在校期间辅修数据科学或自动化相关课程，夯实智能制造与 AI 交叉学科基础。'
+      ]
+    },
+
+    certificates: [
+      { name: '人工智能训练师（高级）', meta: '工业和信息化部教育与考试中心 · 2026.07' },
+      { name: '人工智能训练师（初级）', meta: '工业和信息化部教育与考试中心 · 2026.05' },
+      { name: '中华人民共和国机动车驾驶证（C1）', meta: '2026.07' },
+      { name: '全国中学生英语能力竞赛（NEPCS）市级二等奖', meta: '2025.12' },
+      { name: '高中校级“优秀学生干部”（连续 2 年）', meta: '2024 年、2025 年' },
+      { name: '“最佳课代表”荣誉称号', meta: '高三年级组评选 · 2026.05' },
+      { name: '高中英语单科年级前 10%', meta: '多次月考及模拟考 · 2024 – 2026' }
+    ]
+  };
+
+  /* =========================================================
+     工具函数
+     ========================================================= */
+  const ICONS = {
+    phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>',
+    mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+    print: '<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/>',
+    pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+    cap: '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>',
+    check: '<path d="m20 6-11 11-5-5"/>',
+    award: '<circle cx="12" cy="8" r="6"/><path d="m8.21 13.89-1.21 7.11 5-3 5 3-1.21-7.11"/>',
+    code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>'
+  };
+
+  function icon(name, size) {
+    const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', '0 0 24 24');
+    s.setAttribute('width', size || 16);
+    s.setAttribute('height', size || 16);
+    s.setAttribute('fill', 'none');
+    s.setAttribute('stroke', 'currentColor');
+    s.setAttribute('stroke-width', '2');
+    s.setAttribute('stroke-linecap', 'round');
+    s.setAttribute('stroke-linejoin', 'round');
+    s.setAttribute('aria-hidden', 'true');
+    s.innerHTML = ICONS[name] || '';
+    return s;
+  }
+
+  function el(tag, opts, children) {
+    const node = document.createElement(tag);
+    opts = opts || {};
+    if (opts.class) node.className = opts.class;
+    if (opts.text != null) node.textContent = opts.text;
+    if (opts.attrs) {
+      Object.keys(opts.attrs).forEach(function (k) {
+        node.setAttribute(k, opts.attrs[k]);
+      });
+    }
+    if (opts.on) {
+      Object.keys(opts.on).forEach(function (k) {
+        node.addEventListener(k, opts.on[k]);
+      });
+    }
+    if (children) {
+      (Array.isArray(children) ? children : [children]).forEach(function (c) {
+        if (c == null || c === false) return;
+        node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+      });
+    }
+    return node;
+  }
+
+  function textNode(str) {
+    return document.createTextNode(str);
+  }
+
+  const fullEmail = (resume.emailUser && resume.emailDomain)
+    ? resume.emailUser + '@' + resume.emailDomain
+    : '';
+
+  /* =========================================================
+     渲染：导航
+     ========================================================= */
+  const NAV_ITEMS = [
+    { href: '#highlights', label: '亮点' },
+    { href: '#experience', label: '经历' },
+    { href: '#projects', label: '项目' },
+    { href: '#skills', label: '技能' },
+    { href: '#education', label: '教育与证书' }
+  ];
+
+  function renderNav() {
+    const nav = document.getElementById('navLinks');
+    NAV_ITEMS.forEach(function (item) {
+      nav.appendChild(el('a', {
+        class: 'nav-link',
+        text: item.label,
+        attrs: { href: item.href }
+      }));
+    });
+  }
+
+  /* =========================================================
+     渲染：Hero
+     ========================================================= */
+  function renderHero() {
+    const root = document.getElementById('heroContent');
+    const grid = el('div', { class: 'hero-grid' });
+    const left = el('div', { class: 'hero-left reveal' });
+
+    left.appendChild(el('p', {
+      class: 'eyebrow',
+      text: resume.status + ' · ' + resume.period.split('–')[0].trim() + ' 入学'
+    }));
+
+    left.appendChild(el('h1', { class: 'name', text: resume.name }));
+
+    left.appendChild(el('p', {
+      class: 'hero-sub',
+      text: resume.school + ' · ' + resume.major
+    }));
+
+    left.appendChild(el('p', { class: 'hero-summary', text: resume.summary }));
+
+    const badges = el('div', { class: 'badges' });
+    resume.keywords.forEach(function (k) {
+      badges.appendChild(el('span', { class: 'badge', text: k }));
+    });
+    left.appendChild(badges);
+
+    /* CTA */
+    const cta = el('div', { class: 'cta-row' });
+
+    cta.appendChild(el('a', {
+      class: 'btn btn-primary',
+      attrs: { href: 'tel:' + resume.phone }
+    }, [icon('phone', 16), textNode(resume.phone)]));
+
+    if (fullEmail) {
+      const copyBtn = el('button', {
+        class: 'btn btn-ghost',
+        attrs: { type: 'button', id: 'copyEmailBtn' }
+      }, [icon('mail', 16), textNode('复制邮箱')]);
+
+      copyBtn.addEventListener('click', function () {
+        const mail = [resume.emailUser, resume.emailDomain].join('@');
+        const done = function () {
+          copyBtn.textContent = '';
+          copyBtn.appendChild(icon('check', 16));
+          copyBtn.appendChild(textNode('已复制'));
+          setTimeout(function () {
+            copyBtn.textContent = '';
+            copyBtn.appendChild(icon('mail', 16));
+            copyBtn.appendChild(textNode('复制邮箱'));
+          }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(mail).then(done).catch(fallback);
+        } else {
+          fallback();
+        }
+        function fallback() {
+          const ta = document.createElement('textarea');
+          ta.value = mail;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) { /* ignore */ }
+          document.body.removeChild(ta);
+        }
+      });
+
+      cta.appendChild(copyBtn);
+    }
+
+    const printBtn = el('button', {
+      class: 'btn btn-ghost',
+      attrs: { type: 'button' }
+    }, [icon('print', 16), textNode('打印 / 保存 PDF')]);
+    printBtn.addEventListener('click', function () { window.print(); });
+    cta.appendChild(printBtn);
+
+    left.appendChild(cta);
+
+    /* 右侧头像 */
+    const right = el('div', { class: 'hero-right reveal' });
+    right.appendChild(el('div', { class: 'avatar-wrap' }, [
+      el('div', { class: 'avatar-inner' }, [
+        el('img', {
+          attrs: {
+            src: 'a.jpg',
+            alt: resume.name + ' 头像',
+            loading: 'lazy'
+          }
+        })
+      ])
+    ]));
+
+    const meta = el('div', { class: 'hero-meta' });
+    meta.appendChild(el('span', { class: 'hero-meta-item' }, [icon('pin', 13), textNode(resume.location)]));
+    meta.appendChild(el('span', { class: 'hero-meta-item' }, [icon('cap', 13), textNode(resume.period.split('–')[0].trim() + ' 入学')]));
+    right.appendChild(meta);
+
+    grid.appendChild(left);
+    grid.appendChild(right);
+    root.appendChild(grid);
+  }
+
+  /* =========================================================
+     渲染：亮点
+     ========================================================= */
+  function renderHighlights() {
+    const grid = document.getElementById('statsGrid');
+    resume.highlights.forEach(function (h) {
+      const card = el('div', { class: 'stat reveal' });
+      card.appendChild(el('div', { class: 'stat-num', text: h.num }));
+      card.appendChild(el('div', { class: 'stat-label', text: h.label }));
+      card.appendChild(el('div', { class: 'stat-desc', text: h.desc }));
+      grid.appendChild(card);
+    });
+  }
+
+  /* =========================================================
+     渲染：经历（Tabs）
+     ========================================================= */
+  function renderExpItem(item) {
+    const card = el('article', { class: 'tl-item card reveal' });
+
+    const head = el('div', { class: 'item-head' });
+    const headLeft = el('div');
+    headLeft.appendChild(el('h3', { class: 'item-title', text: item.role }));
+    if (item.org) headLeft.appendChild(el('p', { class: 'item-org', text: item.org }));
+    head.appendChild(headLeft);
+    if (item.period) head.appendChild(el('span', { class: 'item-period', text: item.period }));
+    card.appendChild(head);
+
+    if (item.tags && item.tags.length) {
+      const tags = el('div', { class: 'item-tags' });
+      item.tags.forEach(function (t) {
+        tags.appendChild(el('span', { class: 'badge badge-sm', text: t }));
+      });
+      card.appendChild(tags);
+    }
+
+    if (item.points && item.points.length) {
+      const ul = el('ul', { class: 'points' });
+      item.points.forEach(function (p) { ul.appendChild(el('li', { text: p })); });
+      card.appendChild(ul);
+    }
+
+    return card;
+  }
+
+  function renderExperience() {
+    const tabsEl = document.getElementById('expTabs');
+    const panelsEl = document.getElementById('expPanels');
+
+    const groups = [
+      { id: 'intern', label: '实习与实战', items: resume.experiences.filter(function (e) { return e.category === 'intern'; }) },
+      { id: 'campus', label: '校园经历', items: resume.experiences.filter(function (e) { return e.category === 'campus'; }) }
+    ].filter(function (g) { return g.items.length > 0; });
+
+    if (!groups.length) {
+      document.getElementById('experience').style.display = 'none';
+      return;
+    }
+
+    groups.forEach(function (g, i) {
+      const tabId = 'tab-exp-' + g.id;
+      const panelId = 'panel-exp-' + g.id;
+
+      tabsEl.appendChild(el('button', {
+        class: 'tab',
+        text: g.label,
+        attrs: {
+          type: 'button',
+          role: 'tab',
+          id: tabId,
+          'aria-controls': panelId,
+          'aria-selected': i === 0 ? 'true' : 'false',
+          tabindex: i === 0 ? '0' : '-1'
+        }
+      }));
+
+      const panel = el('div', {
+        class: 'tabpanel',
+        attrs: {
+          role: 'tabpanel',
+          id: panelId,
+          'aria-labelledby': tabId,
+          tabindex: '0'
+        }
+      });
+      if (i !== 0) panel.hidden = true;
+
+      const tl = el('div', { class: 'timeline' });
+      g.items.forEach(function (it) { tl.appendChild(renderExpItem(it)); });
+      panel.appendChild(tl);
+      panelsEl.appendChild(panel);
+    });
+
+    initTablist(tabsEl);
+  }
+
+  /* =========================================================
+     渲染：项目（Tabs）
+     ========================================================= */
+  function renderProjectCard(p) {
+    const card = el('article', { class: 'card reveal' });
+
+    const top = el('div', { class: 'proj-top' });
+    top.appendChild(el('h3', { class: 'proj-title', text: p.name }));
+    if (p.period) top.appendChild(el('span', { class: 'item-period', text: p.period }));
+    card.appendChild(top);
+
+    if (p.subtitle) card.appendChild(el('p', { class: 'proj-sub', text: p.subtitle }));
+
+    if (p.stack && p.stack.length) {
+      const stack = el('div', { class: 'proj-stack' });
+      p.stack.forEach(function (s) { stack.appendChild(el('span', { class: 'chip', text: s })); });
+      card.appendChild(stack);
+    }
+
+    if (p.points && p.points.length) {
+      const ul = el('ul', { class: 'points' });
+      p.points.forEach(function (t) { ul.appendChild(el('li', { text: t })); });
+      card.appendChild(ul);
+    }
+
+    return card;
+  }
+
+  function renderProjects() {
+    const tabsEl = document.getElementById('projTabs');
+    const panelsEl = document.getElementById('projPanels');
+
+    const groups = [
+      { id: 'tech', label: 'AI · 技术', items: resume.projects.filter(function (p) { return p.category === 'tech'; }) },
+      { id: 'growth', label: '个人效能', items: resume.projects.filter(function (p) { return p.category === 'growth'; }) }
+    ].filter(function (g) { return g.items.length > 0; });
+
+    if (!groups.length) {
+      document.getElementById('projects').style.display = 'none';
+      return;
+    }
+
+    groups.forEach(function (g, i) {
+      const tabId = 'tab-proj-' + g.id;
+      const panelId = 'panel-proj-' + g.id;
+
+      tabsEl.appendChild(el('button', {
+        class: 'tab',
+        text: g.label,
+        attrs: {
+          type: 'button',
+          role: 'tab',
+          id: tabId,
+          'aria-controls': panelId,
+          'aria-selected': i === 0 ? 'true' : 'false',
+          tabindex: i === 0 ? '0' : '-1'
+        }
+      }));
+
+      const panel = el('div', {
+        class: 'tabpanel',
+        attrs: {
+          role: 'tabpanel',
+          id: panelId,
+          'aria-labelledby': tabId,
+          tabindex: '0'
+        }
+      });
+      if (i !== 0) panel.hidden = true;
+
+      const grid = el('div', { class: 'proj-grid' });
+      g.items.forEach(function (p) { grid.appendChild(renderProjectCard(p)); });
+      panel.appendChild(grid);
+      panelsEl.appendChild(panel);
+    });
+
+    initTablist(tabsEl);
+  }
+
+  /* =========================================================
+     Tabs 交互（ARIA + 键盘左右切换）
+     ========================================================= */
+  function initTablist(listEl) {
+    const tabs = Array.prototype.slice.call(listEl.querySelectorAll('[role="tab"]'));
+
+    function activate(idx, focus) {
+      tabs.forEach(function (t, i) {
+        const selected = i === idx;
+        t.setAttribute('aria-selected', selected ? 'true' : 'false');
+        t.tabIndex = selected ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !selected;
+      });
+      if (focus) tabs[idx].focus();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { activate(i, false); });
+
+      tab.addEventListener('keydown', function (e) {
+        let next = null;
+        if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next !== null) {
+          e.preventDefault();
+          activate(next, true);
+        }
+      });
+    });
+  }
+
+  /* =========================================================
+     渲染：技能矩阵
+     ========================================================= */
+  function renderSkills() {
+    const grid = document.getElementById('skillsGrid');
+
+    resume.skills.forEach(function (group) {
+      const card = el('div', { class: 'card reveal' });
+
+      const title = el('h3', { class: 'skill-card-title' });
+      title.appendChild(el('span', { class: 'dot' }));
+      title.appendChild(textNode(group.group));
+      card.appendChild(title);
+
+      group.items.forEach(function (item) {
+        const row = el('div', { class: 'skill-row' });
+
+        const top = el('div', { class: 'skill-top' });
+        top.appendChild(el('span', { class: 'skill-name', text: item.name }));
+        top.appendChild(el('span', { class: 'skill-pct', text: item.level + '%' }));
+        row.appendChild(top);
+
+        const bar = el('div', { class: 'bar' });
+        const fill = el('div', {
+          class: 'bar-fill',
+          attrs: {
+            role: 'progressbar',
+            'aria-label': item.name,
+            'aria-valuenow': String(item.level),
+            'aria-valuemin': '0',
+            'aria-valuemax': '100'
+          }
+        });
+        fill.dataset.level = String(item.level);
+        bar.appendChild(fill);
+        row.appendChild(bar);
+
+        card.appendChild(row);
+      });
+
+      grid.appendChild(card);
+    });
+  }
+
+  function animateBars() {
+    const fills = document.querySelectorAll('.bar-fill');
+    if (!('IntersectionObserver' in window)) {
+      fills.forEach(function (f) { f.style.width = f.dataset.level + '%'; });
+      return;
+    }
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const f = entry.target;
+          f.style.width = f.dataset.level + '%';
+          io.unobserve(f);
+        }
+      });
+    }, { threshold: 0.25 });
+    fills.forEach(function (f) { io.observe(f); });
+  }
+
+  /* =========================================================
+     渲染：教育背景
+     ========================================================= */
+  function renderEducation() {
+    const tl = document.getElementById('eduTimeline');
+    const edu = resume.education;
+
+    const card = el('article', { class: 'tl-item card reveal' });
+
+    const head = el('div', { class: 'item-head' });
+    const left = el('div');
+    left.appendChild(el('h3', { class: 'item-title', text: edu.school }));
+    left.appendChild(el('p', { class: 'item-org', text: edu.major }));
+    head.appendChild(left);
+    head.appendChild(el('span', { class: 'item-period', text: edu.period }));
+    card.appendChild(head);
+
+    if (edu.points && edu.points.length) {
+      const ul = el('ul', { class: 'points' });
+      edu.points.forEach(function (p) { ul.appendChild(el('li', { text: p })); });
+      card.appendChild(ul);
+    }
+
+    tl.appendChild(card);
+  }
+
+  /* =========================================================
+     渲染：证书
+     ========================================================= */
+  function renderCertificates() {
+    const grid = document.getElementById('certGrid');
+
+    resume.certificates.forEach(function (c) {
+      const card = el('div', { class: 'cert reveal' });
+      const ic = el('div', { class: 'cert-icon' });
+      ic.appendChild(icon('award', 15));
+      card.appendChild(ic);
+
+      const body = el('div');
+      body.appendChild(el('div', { class: 'cert-name', text: c.name }));
+      if (c.meta) body.appendChild(el('div', { class: 'cert-meta', text: c.meta }));
+      card.appendChild(body);
+
+      grid.appendChild(card);
+    });
+
+    /* 证书图片展示 */
+    const photoContainer = document.getElementById('certPhotos');
+    if (photoContainer) {
+      const photos = [
+        { src: 'b.jpg', alt: '证书 b' },
+        { src: 'c.jpg', alt: '证书 c' }
+      ];
+      photos.forEach(function (p) {
+        const fig = el('figure', { class: 'cert-photo card reveal' });
+        fig.appendChild(el('img', {
+          attrs: {
+            src: p.src,
+            alt: p.alt,
+            loading: 'lazy'
+          }
+        }));
+        fig.appendChild(el('figcaption', { text: '证书原件' }));
+        photoContainer.appendChild(fig);
+      });
+    }
+  }
+
+  /* =========================================================
+     渲染：页脚
+     ========================================================= */
+  function renderFooter() {
+    const now = new Date();
+    document.getElementById('year').textContent = String(now.getFullYear());
+    document.getElementById('updateTime').textContent =
+      now.getFullYear() + ' 年 ' + (now.getMonth() + 1) + ' 月';
+  }
+
+  /* =========================================================
+     交互：主题切换
+     ========================================================= */
+  function initTheme() {
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('resume-theme', next); } catch (e) { /* ignore */ }
+    });
+  }
+
+  /* =========================================================
+     交互：打印 / 返回顶部 / 导航高亮
+     ========================================================= */
+  function initPrint() {
+    document.getElementById('printBtn').addEventListener('click', function () {
+      window.print();
+    });
+  }
+
+  function initToTop() {
+    const btn = document.getElementById('toTop');
+    let ticking = false;
+
+    function update() {
+      const y = window.pageYOffset || document.documentElement.scrollTop;
+      if (y > 420) btn.classList.add('show');
+      else btn.classList.remove('show');
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    update();
+  }
+
+  function initNavSpy() {
+    const links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+    const sections = ['highlights', 'experience', 'projects', 'skills', 'education']
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
+
+    if (!('IntersectionObserver' in window) || !sections.length) return;
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const id = '#' + entry.target.id;
+        links.forEach(function (l) {
+          l.classList.toggle('active', l.getAttribute('href') === id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+
+  /* =========================================================
+     交互：滚动淡入
+     ========================================================= */
+  function initReveal() {
+    const nodes = document.querySelectorAll('.reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach(function (n) { n.classList.add('in'); });
+      return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    nodes.forEach(function (n, i) {
+      n.style.transitionDelay = Math.min(i % 6, 5) * 45 + 'ms';
+      io.observe(n);
+    });
+  }
+
+  /* =========================================================
+     初始化
+     ========================================================= */
+  function init() {
+    renderNav();
+    renderHero();
+    renderHighlights();
+    renderExperience();
+    renderProjects();
+    renderSkills();
+    renderEducation();
+    renderCertificates();
+    renderFooter();
+
+    initTheme();
+    initPrint();
+    initToTop();
+    initNavSpy();
+    animateBars();
+
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(initReveal);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
+```
